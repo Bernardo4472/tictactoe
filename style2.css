@@ -1,0 +1,276 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: "Kdam Thmor Pro", sans-serif;
+    background-color: #2B2836;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height to center content vertically */
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* Centering individual screens */
+.home-screen,
+.player-setup,
+.game-board,
+.winner-screen,
+.history-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #1F1D24;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.home-screen h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+/* Buttons */
+.btn {
+    background-color: #2B2836;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 4px;
+    font-family: "Kdam Thmor Pro", sans-serif;
+    min-width: 150px;
+}
+
+.btn:hover {
+    background-color: #444;
+}
+
+.btn-outline {
+    background-color: #2B2836;
+    color: white;
+    border: none;
+}
+
+/* Player setup screen */
+.player-setup {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-columns-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    width: 100%;
+}
+
+.player-column {
+    background-color: #2B2836;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 250px;
+}
+
+.player-column h2 {
+    font-size: 1.8em;
+}
+
+/* Style selector styling */
+.shape-selector {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.shape-option {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 50px; /* Fixed width for shape options */
+    height: 50px; /* Fixed height for shape options */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shape-option:hover {
+    background-color: #444;
+}
+
+.shape-option.selected {
+    border: 2px solid #fff;
+}
+
+.style-preview {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Start Game button styling */
+.start-game-button-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.start-game-button-container .btn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    min-width: 200px;
+    background-color: #2B2836;
+}
+
+/* Game board */
+.game-board {
+    display: none;
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.cell {
+    background-color: #333;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.cell:hover {
+    background-color: #444;
+}
+
+.cell img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Winner screen */
+.winner-screen {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.winner-screen .btn {
+    background-color: #211F26;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: "Kdam Thmor Pro", sans-serif;
+    min-width: 150px;
+}
+
+.winner-screen .btn:hover {
+    background-color: #333;
+}
+
+.winner-card {
+    background-color: #2B2836;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+/* History screen */
+.history-screen {
+    display: none;
+    padding: 20px;
+}
+
+.game-history {
+    background-color: #2B2836;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+/* Form inputs */
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    background-color: #333;
+    border: none;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Status message */
+#status {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+/* Title for setup */
+.setup-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* Labels in player setup */
+.player-column label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+/* Turn indicator styling */
+#turnIndicator {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .player-columns-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .player-column {
+        max-width: 100%;
+    }
+
+    .board {
+        max-width: 280px;
+    }
+
+
+}
