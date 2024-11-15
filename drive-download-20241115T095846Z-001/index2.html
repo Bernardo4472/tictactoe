@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+    </style>
+</head>
+<body>
+    <!-- Home Screen -->
+    <div id="homeScreen" class="home-screen">
+        <h1>TIC TAC TOE</h1>
+        <button class="btn" onclick="showScreen('playerSetup')">Play</button>
+        <button class="btn btn-outline" onclick="showScreen('history'); loadLastGames()">Last games</button>
+    </div>
+
+    <!-- Player Setup Screen -->
+    <div id="playerSetup" class="player-setup" style="display: none;">
+        <h2 class="setup-title">Player Setup</h2>
+        <div class="player-columns-container">
+<!-- Update the shape selector sections in the player-setup div -->
+<div class="player-column">
+    <h2>Player 1</h2>
+    <div>
+        <label>Name:</label>
+        <input type="text" id="player1" placeholder="Enter name">
+    </div>
+    <div>
+        <label>Style:</label>
+        <div class="shape-selector">
+            <div class="shape-option" data-player="1" onclick="selectShape('X', 'classic')" title="Classic">
+                <img src="images/x-classic.png" alt="Classic X" class="style-preview">
+            </div>
+            <div class="shape-option" data-player="1" onclick="selectShape('X', 'neon')" title="Neon">
+                <img src="images/x-neon.png" alt="Neon X" class="style-preview">
+            </div>
+            <div class="shape-option" data-player="1" onclick="selectShape('X', 'minimal')" title="Minimal">
+                <img src="images/x-minimal.png" alt="Minimal X" class="style-preview">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="player-column">
+    <h2>Player 2</h2>
+    <div>
+        <label>Name:</label>
+        <input type="text" id="player2" placeholder="Enter name">
+    </div>
+    <div>
+        <label>Style:</label>
+        <div class="shape-selector">
+            <div class="shape-option" data-player="2" onclick="selectShape('O', 'classic')" title="Classic">
+                <img src="images/o-classic.png" alt="Classic O" class="style-preview">
+            </div>
+            <div class="shape-option" data-player="2" onclick="selectShape('O', 'neon')" title="Neon">
+                <img src="images/o-neon.png" alt="Neon O" class="style-preview">
+            </div>
+            <div class="shape-option" data-player="2" onclick="selectShape('O', 'minimal')" title="Minimal">
+                <img src="images/o-minimal.png" alt="Minimal O" class="style-preview">
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        <div class="start-game-button-container">
+            <button class="btn" onclick="startGame()">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Game Board Screen -->
+    <div id="gameScreen" class="game-board" style="display: none;">
+        <h2 id="turnIndicator"></h2>
+        <div id="board" class="board"></div>
+        <div id="status"></div>
+    </div>
+
+    <!-- Winner Screen -->
+    <div id="winnerScreen" class="winner-screen" style="display: none;">
+        <div class="winner-card">
+            <h2 id="winnerMessage"></h2>
+            <button class="btn" onclick="resetGame()">Play again</button>
+            <button class="btn" onclick="showScreen('history'); loadLastGames()">Leaderboard</button>
+        </div>
+    </div>
+
+    <!-- History Screen -->
+    <div id="historyScreen" class="history-screen" style="display: none;">
+        <h2>Last 10 games</h2>
+        <div id="lastGames"></div>
+        <button class="btn" onclick="showScreen('homeScreen')">Play again</button>
+    </div>
+
+    <!-- Move script to end of body -->
+    <script src="parameters.js"></script>
+</body>
+</html>
